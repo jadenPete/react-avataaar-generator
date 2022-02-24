@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"jsx": "react",
+		"lib": ["es2017"],
+		"outDir": "dist",
+		"strictNullChecks": false
+	},
+
+	"extends": "@tsconfig/recommended/tsconfig.json",
+	"include": ["src/*"]
+}
