@@ -1,20 +1,21 @@
 {
 	"name": "react-avataaar-generator",
-	"version": "0.1.0",
-	"private": true,
+	"version": "0.1.1",
+	"license": "MIT",
+	"author": "Jaden Peterson",
 	"main": "./dist/index.js",
 	"dependencies": {
 		"avataaars": "^1.2.1",
 		"react": "^16.13.1",
 		"react-bootstrap": "^2.1.2"
 	},
-	"scripts": {
-		"build": "tsc"
-	},
 	"devDependencies": {
 		"@tsconfig/recommended": "^1.0.1",
 		"@types/react": "^17.0.39",
 		"@types/react-bootstrap": "^0.32.29",
 		"typescript": "^4.5.5"
+	},
+	"scripts": {
+		"build": "tsc"
 	}
 }
