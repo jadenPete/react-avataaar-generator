@@ -1,8 +1,11 @@
-import Avatar, { Piece, Props } from "avataaars";
-import * as React from "react";
-import * as ReactBootstrap from "react-bootstrap"
+import Avatar, { Piece, Props } from "avataaars"
+import React from "react"
+import Col from "react-bootstrap/Col"
+import Nav from "react-bootstrap/Nav"
+import Row from "react-bootstrap/Row"
+import Tab from "react-bootstrap/Tab"
 
-import { OPTIONS } from "./options";
+import { OPTIONS } from "./options"
 
 function Color(props: {color: string, onClick: () => void}) {
 	return <div
@@ -29,25 +32,25 @@ export function AvatarGenerator(props: {value: Props, onChange?: (value: Props) 
 			[attr]: val,
 		})
 
-	return <ReactBootstrap.Tab.Container defaultActiveKey="top">
-		<ReactBootstrap.Row>
-			<ReactBootstrap.Col sm={3}>
-				<ReactBootstrap.Nav variant="pills" className="flex-column">
-					{OPTIONS.map(option => <ReactBootstrap.Nav.Item>
-						<ReactBootstrap.Nav.Link eventKey={option.type}>
+	return <Tab.Container defaultActiveKey="top">
+		<Row>
+			<Col sm={3}>
+				<Nav variant="pills" className="flex-column">
+					{OPTIONS.map(option => <Nav.Item>
+						<Nav.Link eventKey={option.type}>
 							{option.label}
-						</ReactBootstrap.Nav.Link>
-					</ReactBootstrap.Nav.Item>)}
-				</ReactBootstrap.Nav>
-			</ReactBootstrap.Col>
+						</Nav.Link>
+					</Nav.Item>)}
+				</Nav>
+			</Col>
 
-			<ReactBootstrap.Col>
+			<Col>
 				<div className="d-flex justify-content-center mb-4">
 					<Avatar style={{width: "12.5rem", height: "12.5rem"}} {...props.value}/>
 				</div>
 
-				<ReactBootstrap.Tab.Content>
-					{OPTIONS.map(option => <ReactBootstrap.Tab.Pane eventKey={option.type}>
+				<Tab.Content>
+					{OPTIONS.map(option => <Tab.Pane eventKey={option.type}>
 						<div className="mb-4">
 							{option.values.map(val => {
 								let attr: any = {
@@ -109,9 +112,9 @@ export function AvatarGenerator(props: {value: Props, onChange?: (value: Props) 
 										onClick={() => handlePieceClick("hatColor", colorName)}/>)
 								: null}
 						</div>
-					</ReactBootstrap.Tab.Pane>)}
-				</ReactBootstrap.Tab.Content>
-			</ReactBootstrap.Col>
-		</ReactBootstrap.Row>
-	</ReactBootstrap.Tab.Container>
+					</Tab.Pane>)}
+				</Tab.Content>
+			</Col>
+		</Row>
+	</Tab.Container>
 }
